@@ -163,32 +163,6 @@ npm run profile
 - **Graphics**: Any GPU with WebGL 2.0 support
 - **Storage**: 50MB available space for application and cached assets
 
-## Future Development Roadmap
-
-### Short-term Enhancements (Q3 2025)
-- Mobile-optimized touch controls with haptic feedback
-- Offline mode with progressive web app capabilities
-- Additional language packs with localized word databases
-
-### Medium-term Features (Q4 2025)
-- Multiplayer mode with real-time competition
-- Advanced physics simulations including wind effects and material properties
-- Custom word list creation and sharing
-
-### Long-term Vision (2026)
-- Machine learning integration for adaptive difficulty
-- Virtual reality support for immersive gameplay
-- Physics education mode with interactive rope behavior demonstrations
-
-## Contribution Guidelines
-
-Contributors are welcome to enhance the project following these guidelines:
-1. Fork the repository and create a feature branch
-2. Ensure physics simulations maintain 60fps on target devices
-3. Write tests for new features, especially physics calculations
-4. Submit pull requests with comprehensive descriptions
-5. Adhere to the established code style and documentation standards
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
