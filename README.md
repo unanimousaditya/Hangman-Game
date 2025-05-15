@@ -136,7 +136,7 @@ To ensure smooth performance across devices:
 
 ```bash
 # Clone the repository with depth 1 to minimize download size
-git clone --depth 1 https://github.com/unanimousaditya/HTML-CSS-JAVASCRIPT-GAMES/Hangman-Game.git
+git clone --depth 1 https://github.com/unanimousaditya/Hangman-Game.git
 
 # Navigate to the project directory
 cd hangman-physics
