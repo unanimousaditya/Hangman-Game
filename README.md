@@ -1,7 +1,5 @@
 # Hangman Game with Physics-Based Rope Simulation
 
-![Hangman](https://i.ibb.co/ThFP6LJ/Hangman.png)
-
 ## About the Project
 
 Hangman is a classic word guessing game reimagined with advanced physics simulations. In this implementation, players must guess a hidden word letter by letter before the hangman's rope fully tightens. Unlike traditional hangman games with static imagery, this version features a dynamically simulated rope that responds realistically to tension changes as the game progresses.
