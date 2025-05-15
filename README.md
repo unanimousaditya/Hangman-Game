@@ -153,7 +153,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-Aditya - [GitHub](https://github.com/unanimousaditya)
+Aditya Raj - [GitHub](https://github.com/unanimousaditya)
 
 Project Link: [https://github.com/unanimousaditya/Hangman-Game](https://github.com/unanimousaditya/Hangman-Game)
 
