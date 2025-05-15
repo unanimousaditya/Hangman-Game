@@ -1,154 +1,166 @@
-# Hangman Game with Physics-Based Rope Simulation
+# 🎮 Hangman Game
 
-## About the Project
+A classic implementation of the Hangman word-guessing game built with HTML, CSS, and JavaScript - challenge your vocabulary while having fun!
 
-Hangman is a classic word guessing game reimagined with advanced physics simulations. In this implementation, players must guess a hidden word letter by letter before the hangman's rope fully tightens. Unlike traditional hangman games with static imagery, this version features a dynamically simulated rope that responds realistically to tension changes as the game progresses.
+## 📖 Description
 
-Each incorrect guess incrementally increases the tension on the rope, pulling the hangman figure closer to his fate. The visual feedback is immediate and compelling, creating a sense of urgency as players make their guesses. The rope behaves according to real-world physics principles, adding both visual interest and educational value to the classic game concept.
+This Hangman Game is an interactive web-based version of the traditional word-guessing game that brings the pen-and-paper classic to digital life! Players must strategically guess a hidden word letter by letter before the virtual hangman drawing is completed. With each incorrect guess, another piece of the hangman is drawn, bringing you closer to losing the game. The suspense builds with every choice!
 
-## Physics Simulation: In-Depth Overview
+The game features an intuitive and visually appealing interface, smooth animations, a variety of word categories to choose from, and sound effects that enhance the gaming experience. Whether you're looking to pass time, improve your vocabulary, or challenge friends, this Hangman Game offers endless entertainment.
 
-### Spring-Damper System
+## ✨ Features
 
-The rope is modeled as a series of interconnected particles, with each connection behaving as a spring-damper system. This approach creates a physically accurate representation of a rope under tension. The core physics model implements **Hooke's Law** enhanced with damping:
+- 🎯 Interactive gameplay with both on-screen keyboard and physical keyboard support
+- 🎭 Visually engaging hangman drawing that progressively appears with each mistake
+- 📚 Multiple word categories (Animals, Countries, Sports, Movies, etc.)
+- 🏆 Score tracking system to monitor your success rate
+- 📱 Fully responsive design that works perfectly on desktop, tablet, and mobile devices
+- 🔊 Immersive sound effects for correct guesses, wrong guesses, wins, and losses
+- 💡 Optional hint system when you're stuck (with score penalty)
+- 🌙 Light/dark mode toggle to reduce eye strain
+- ⏱️ Optional timer mode for added challenge
 
-**F = -βv - kx**
+## 🔴 Live Demo
 
-Where:
-* **F** is the resultant force vector acting on each particle (measured in Newtons)
-* **x** is the displacement vector of the spring from its equilibrium position (measured in meters)
-* **v** is the velocity vector of the particle (measured in meters per second)
-* **k** is the spring constant that determines the rope's stiffness (measured in N/m)
-* **β** is the damping coefficient that simulates energy dissipation due to internal friction and air resistance (measured in kg/s)
+Try the game here: [Hangman Game Live Demo](https://unanimousaditya.github.io/Hangman-Game)
 
-### Particle System Architecture
+## 🎲 How to Play
 
-Each segment of the rope consists of:
-- Mass points (particles) with position, velocity, and acceleration properties
-- Spring connections between adjacent particles with configurable rest lengths
-- Constraints that maintain the overall structure and prevent unrealistic stretching
+1. 🎯 Select a category for your word challenge
+2. 🔤 The game randomly selects a word and displays it as underscores
+3. ⌨️ Click on the on-screen keyboard letters or use your physical keyboard to guess
+4. ✅ Correct guesses reveal the letter in its correct position(s)
+5. ❌ Incorrect guesses add another piece to the hangman drawing
+6. 🏆 Win by correctly guessing all letters before the hangman is complete
+7. 💀 Lose if the hangman drawing is completed (typically after 6 wrong guesses)
+8. 🔄 Play again with a new random word!
 
-### Numerical Integration
+## 💻 Technologies Used
 
-The simulation employs Verlet integration to update the position of each particle over time:
-1. Forces are calculated based on current positions and velocities
-2. Accelerations are derived from forces (a = F/m)
-3. Velocities are updated (v = v + a*dt)
-4. Positions are updated (p = p + v*dt)
-5. Constraints are enforced to maintain rope integrity
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) HTML5 for structure
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) CSS3 for styling and animations
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) JavaScript (ES6+) for game logic
+- 📱 Responsive design principles for cross-device compatibility
+- 🖼️ SVG graphics for the hangman illustrations
+- 🔊 Web Audio API for sound effects
 
-### Tension Visualization
+## 🚀 Installation and Setup
 
-As the game progresses and incorrect guesses accumulate:
-1. The spring constant (k) increases incrementally
-2. Greater tension is visually represented through rope straightening and color changes
-3. The rope position updates dynamically, pulling the hangman figure upward
-4. Subtle oscillations simulate the natural movement of a tensioned rope
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/unanimousaditya/Hangman-Game.git
+   ```
 
-## Gameplay Mechanics
+2. Navigate to the project directory:
+   ```bash
+   cd Hangman-Game
+   ```
 
-### Word Selection and Difficulty
+3. Open `index.html` in your browser to start playing:
+   ```bash
+   # On macOS
+   open index.html
+   
+   # On Windows
+   start index.html
+   
+   # On Linux
+   xdg-open index.html
+   ```
 
-The game features a comprehensive dictionary organized into difficulty levels:
-- **Easy**: 4-5 letter common words from everyday vocabulary
-- **Medium**: 6-8 letter words with moderate complexity
-- **Hard**: 9+ letter words, including technical terms and obscure vocabulary
+4. No server setup or build process required! The game runs entirely in the browser.
 
-The word selection algorithm weighs frequency of usage, ensuring a balanced challenge for players at each level.
+## 📂 Project Structure
 
-### Scoring System
+```
+Hangman-Game/
+│
+├── index.html           # Main HTML file with game interface
+├── css/                 # Stylesheet directory
+│   ├── style.css        # Main CSS file for styling
+│   ├── animations.css   # CSS animations and transitions
+│   └── responsive.css   # Media queries for responsiveness
+│
+├── js/                  # JavaScript directory
+│   ├── script.js        # Core game logic and functionality
+│   ├── words.js         # Word categories and collections
+│   ├── keyboard.js      # Virtual keyboard handler
+│   ├── hangman.js       # Hangman drawing controller
+│   └── sounds.js        # Sound effects manager
+│
+├── assets/              # Media files
+│   ├── images/          # Game graphics and SVGs
+│   │   ├── hangman/     # Hangman state images
+│   │   └── ui/          # UI elements and icons
+│   │
+│   ├── sounds/          # Game sound effects
+│   │   ├── correct.mp3  # Correct guess sound
+│   │   ├── wrong.mp3    # Wrong guess sound
+│   │   ├── win.mp3      # Win game sound
+│   │   └── lose.mp3     # Lose game sound
+│   │
+│   └── fonts/           # Custom fonts
+│
+└── README.md            # This documentation file
+```
 
-Points are awarded based on multiple factors:
-- Length of the word (longer words yield higher base points)
-- Difficulty level multiplier (Easy: x1, Medium: x1.5, Hard: x2)
-- Time bonus for quick completions
-- Penalty reductions for incorrect guesses
-- Streak bonuses for consecutive correct games
+## 🎯 Game Logic
 
-### Adaptive Difficulty
+The Hangman Game follows these core principles:
 
-The game tracks player performance and subtly adjusts:
-- Word selection probability based on player's success rate
-- Time allowances for different word categories
-- Rope tension increment rates per incorrect guess
+1. 🎲 A word is randomly selected from the chosen category
+2. 🧩 The word is initially displayed as a series of underscores
+3. 🔠 When a player selects a letter:
+   - If the letter is in the word, all instances are revealed
+   - If the letter is not in the word, a part of the hangman is drawn
+4. 🔄 The game tracks used letters to prevent duplicate guesses
+5. 🏁 The game ends when either:
+   - All letters are correctly guessed (win)
+   - The hangman drawing is completed (lose)
 
-## User Interface Design
+## 🛠️ Contributing
 
-### Visual Components
+Contributions are enthusiastically welcomed! To contribute:
 
-- **Gallows Structure**: Rendered with weathered wood textures and physical properties
-- **Rope Visualization**: Dynamic rendering with tension-responsive thickness and color
-- **Character Animation**: The hangman figure responds realistically to rope movements
-- **Word Display**: Clear typographic presentation with placeholder and revealed letters
-- **Virtual Keyboard**: Color-coded feedback for guessed letters
+1. 🍴 Fork the repository
+2. 🌱 Create a new branch (`git checkout -b feature/amazing-feature`)
+3. ✍️ Make your changes
+4. 💾 Commit your changes (`git commit -m 'Add some amazing feature'`)
+5. 📤 Push to the branch (`git push origin feature/amazing-feature`)
+6. 🔁 Open a Pull Request
 
-### Audio Design
+### Contribution Guidelines:
 
-- Atmospheric background sounds that intensify with game progress
-- Distinct sound effects for correct and incorrect guesses
-- Rope tension sounds that correlate with physical simulation
-- Success and failure musical sequences
+- 📏 Follow the existing code style and formatting
+- 📝 Add comments to explain complex logic
+- ✅ Test your changes thoroughly before submitting
+- 🔍 Keep PRs focused on a single feature or bug fix
 
-## Technical Implementation Details
+## 🚀 Future Enhancements
 
-### Rendering Engine
+- 🌐 Multiplayer mode to compete with friends
+- 🏆 Global leaderboard with player rankings
+- 🔤 Custom word submission option
+- 🌍 Multiple language support
+- 📊 Detailed statistics tracking
+- 🎮 Additional game modes (timed challenges, word length challenges)
+- 📱 Progressive Web App (PWA) functionality for offline play
+- 🔐 User accounts to save progress
 
-The system uses a custom WebGL-based renderer optimized for:
-- Efficient particle system updates
-- Dynamic rope rendering with adaptive detail levels
-- Realistic shadow casting and lighting effects
-- Support for both desktop and mobile hardware acceleration
-
-### Physics Calculation Efficiency
-
-To ensure smooth performance across devices:
-1. Spatial partitioning techniques reduce unnecessary calculations
-2. Adaptive time-stepping adjusts simulation detail based on device capabilities
-3. Rope segments far from visible areas use simplified physics models
-4. SIMD operations accelerate vector calculations when available
-
-### Memory Management
-
-- Particle pool system prevents garbage collection interruptions
-- Texture atlas approach minimizes draw calls
-- Efficient data structures optimize force calculations
-- Progressive loading of assets based on gameplay needs
-
-## Development Environment
-
-### Technology Stack
-
-- **Frontend**: HTML5, CSS3, WebGL, and JavaScript (ES6+)
-- **Build System**: Webpack with hot module replacement
-- **Testing Framework**: Jest with custom physics assertion helpers
-- **Performance Monitoring**: Custom WebGL profiling tools
-
-### Development Practices
-
-- Test-driven development methodology
-- Continuous integration with automated physics regression tests
-- Performance benchmarking across device categories
-- Accessibility compliance for keyboard navigation and screen readers
-
-## Installation and Setup
-
-```bash
-# Clone the repository with depth 1 to minimize download size
-git clone --depth 1 https://github.com/unanimousaditya/Hangman-Game.git
-
-
-## System Requirements
-
-- **Browser**: Modern browsers with WebGL support (Chrome 80+, Firefox 75+, Safari 13.1+)
-- **Processor**: Dual-core 2GHz+ recommended for optimal physics simulation
-- **Memory**: 4GB RAM minimum, 8GB recommended
-- **Graphics**: Any GPU with WebGL 2.0 support
-- **Storage**: 50MB available space for application and cached assets
-
-## License
+## 📜 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Credits
+## 📞 Contact
 
-Designed, developed, and maintained by Aditya Raj
+Aditya - [GitHub](https://github.com/unanimousaditya)
+
+Project Link: [https://github.com/unanimousaditya/Hangman-Game](https://github.com/unanimousaditya/Hangman-Game)
+
+## 👏 Acknowledgments
+
+- 🎮 Inspiration from the classic Hangman game we all played as kids
+- 🙌 Thanks to all contributors who have helped improve this project
+- 🔤 Word lists compiled from various open sources
+- 🎨 UI design inspired by modern gaming interfaces
+- 💻 Built with passion for coding and classic games
