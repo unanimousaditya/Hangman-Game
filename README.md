@@ -136,24 +136,6 @@ To ensure smooth performance across devices:
 # Clone the repository with depth 1 to minimize download size
 git clone --depth 1 https://github.com/unanimousaditya/Hangman-Game.git
 
-# Navigate to the project directory
-cd hangman-physics
-
-# Install dependencies with exact versions for consistency
-npm ci
-
-# Build optimized production assets
-npm run build
-
-# Start the development server with hot reloading
-npm start
-
-# Run the test suite
-npm test
-
-# Generate performance profile
-npm run profile
-```
 
 ## System Requirements
 
